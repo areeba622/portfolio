@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0A0D12;
+  --color-panel: #161E29;
+  --color-console: #0F141C;
+  --color-primary: #5FC9F0;
+  --color-primary-dim: #2A5A72;
+  --color-secondary: #FF8A3D;
+  --color-secondary-dim: #7A4A20;
+  --color-paper: #D4DDE3;
+  --color-line: #2E4A5E;
+
+--font-display: 'Orbitron', -apple-system, sans-serif;
+--font-mono: 'JetBrains Mono', monospace;
+--font-data: 'Share Tech Mono', monospace;
+}
+
+:root {
+  --void: #0A0D12;
+  --panel: #161E29;
+  --console: #0F141C;
+  --primary: #5FC9F0;
+  --primary-dim: #2A5A72;
+  --secondary: #FF8A3D;
+  --secondary-dim: #7A4A20;
+  --paper: #D4DDE3;
+  --line: #2E4A5E;
+}
+
+body {
+  background-color: var(--void);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* Glass panel style */
+.glass-panel {
+  background-color: rgba(22, 30, 41, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  box-shadow: inset 0 1px 0 rgba(95, 201, 240, 0.22);
+}
+
+@media (max-width: 639px) {
+  .glass-panel {
+    background-color: rgba(22, 30, 41, 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* DEGREE.LOG button */
+.degree-btn {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--paper);
+  cursor: pointer;
+  position: relative;
+  padding: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.15s ease;
+}
+
+.degree-btn::before,
+.degree-btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 3px);
+  border: 1px solid var(--primary-dim);
+  transition: all 0.15s ease;
+}
+
+.degree-btn::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.degree-btn::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.degree-btn:active,
+.degree-btn:focus {
+  outline: none;
+}
+
+.degree-btn:active::before,
+.degree-btn:active::after {
+  right: 2px;
+  left: 2px;
+}
+
+.degree-btn:active::before {
+  top: 2px;
+}
+
+.degree-btn:active::after {
+  bottom: 2px;
+}
+
+.degree-lg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  color: var(--paper);
+  background-color: var(--void);
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.degree-lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: var(--void);
+}
+
+.degree-lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--void);
+  transition: all 0.2s ease;
+}
+
+.degree-sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: var(--secondary);
+  transform: skew(-15deg);
+  transition: all 0.2s ease;
+}
+
+.degree-text {
+  position: relative;
+  z-index: 1;
+}
+
+.degree-dot {
+  position: relative;
+  z-index: 1;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+
+.degree-btn:hover .degree-lg {
+  color: var(--void);
+}
+
+.degree-btn:hover .degree-sl {
+  width: calc(100% + 15px);
+}
+
+.degree-btn:hover .degree-lg::after {
+  background-color: var(--paper);
+}
+
+/* Active / toggled-on state (showHud === true) */
+.degree-btn.is-active::before,
+.degree-btn.is-active::after {
+  border-color: var(--secondary);
+}
+
+.degree-btn.is-active .degree-lg {
+  box-shadow: inset 0px 0px 8px rgba(255, 138, 61, 0.3);
+}
+
+@keyframes term-blink {
+  50% { opacity: 0; }
+}
+.term-cursor {
+  animation: term-blink 1s step-start infinite;
+}
