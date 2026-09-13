@@ -50,7 +50,7 @@ function SpecIcon({ name }) {
 
 export function SystemSpecs() {
   return (
-    <Panel id="skills" label="SYSTEM.SPECS" tag="SKILLS.IO">
+    <Panel id="skills" label="SKILLS.LOG" tag="TECH.IO">
       <div className="flex flex-col divide-y divide-line/60 font-mono text-xs">
         {PORTFOLIO_DATA.specs.map((item) => {
           const labels = item.items.split(',').map((s) => s.trim());

@@ -21,17 +21,22 @@ export default {
       fontFamily: {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
-      animation: {
-        breathe: 'breathe 6s ease-in-out infinite',
-        flicker: 'flicker 0.55s steps(1, end) forwards',
-        blink: 'blink 1s steps(1) infinite',
-        pulseCustom: 'pulseCustom 1.6s ease-in-out infinite',
-      },
+        animation: {
+          breathe: 'breathe 6s ease-in-out infinite',
+          flicker: 'flicker 0.55s steps(1, end) forwards',
+          blink: 'blink 1s steps(1) infinite',
+          pulseCustom: 'pulseCustom 1.6s ease-in-out infinite',
+          pingSlow: 'pingSlow 2.2s cubic-bezier(0, 0, 0.2, 1) infinite', // ← add this
+        },
       keyframes: {
         breathe: {
           '0%, 100%': { boxShadow: 'inset 0 0 150px rgba(0,0,0,0.7)' },
           '50%': { boxShadow: 'inset 0 0 175px rgba(0,0,0,0.8)' },
         },
+        pingSlow: {                                                     // ← add this
+            '75%, 100%': { transform: 'scale(2)', opacity: '0' },
+          },
+
         flicker: {
           '0%': { opacity: '1' },
           '10%': { opacity: '0.1' },

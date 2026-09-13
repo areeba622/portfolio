@@ -66,7 +66,7 @@ export const PORTFOLIO_DATA = {
       tagline: "Interactive tree visualizer and inspector for the Document Object Model",
       github: "https://github.com/areeba622/domlab",
       demoUrl: "https://domlab-162.vercel.app/",
-      tech: ["React", "TypeScript", "CSS", "DOM API", "Adapter Pattern"],
+      tech: ["React", "TypeScript", "CSS"],
       writeup: {
         problem: "Developers often learn the DOM through static diagrams, making its structure and behavior hard to visualize. DOMLab makes it interactive — paste HTML and explore it as a live tree.",
         approach: "Built with React, TypeScript, and CSS, using the Adapter Pattern to collect data from the browser’s native DOM API and transform it into the application’s internal format for consistent processing and visualization.",
@@ -79,7 +79,7 @@ export const PORTFOLIO_DATA = {
       tagline: "Interior design e-commerce system applying GoF design patterns",
       github: "https://github.com/areeba622/palette",
       demoUrl: null,
-      tech: ["Java", "Spring Boot", "React", "PostgreSQL", "Design Patterns"],
+      tech: ["Java", "Spring Boot", "React", "PostgreSQL"],
       writeup: {
         problem: "Designed and built as a Software Architecture & Design course project, Palette solves the real-world challenge of standard e-commerce platforms lacking personalized interior styling guidance and flexible multi-item furniture bundling.",
         approach: "Built a full-stack Java/Spring Boot and React application structured around core GoF design patterns. Used Factory and Builder for custom furniture generation, Adapter for payment integration, and Composite to manage single and bundled item checkouts.",

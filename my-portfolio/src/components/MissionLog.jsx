@@ -8,7 +8,7 @@ export function MissionLog() {
 
   return (
     <>
-      <Panel id="work" label="MISSION.LOG" tag="EXEC.DIR">
+      <Panel id="work" label="PROJECTS.LOG" tag="EXEC.DIR">
         <div className="flex flex-col divide-y divide-line/70 -mt-3">
           {PORTFOLIO_DATA.projects.map((project) => (
             <div

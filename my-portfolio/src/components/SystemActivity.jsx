@@ -145,7 +145,7 @@ export function SystemActivity({ username = 'areeba622' }) {
   }, [username]);
 
   return (
-    <Panel tag="LIVE" label="SYSTEM.ACTIVITY">
+    <Panel tag="LIVE" label="GITHUB.ACTIVITY">
       {loading && (
         <div className="py-6 flex flex-col items-center justify-center gap-2 font-data text-xs text-primary-dim">
           <span className="w-2 h-2 rounded-full bg-primary animate-ping" />

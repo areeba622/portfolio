@@ -58,7 +58,7 @@ export function Nav() {
     { label: 'ABOUT', href: '#about' },
     { label: 'WORK', href: '#work' },
     { label: 'SKILLS', href: '#skills' },
-    { label: 'SIGNAL', href: '#signal' }
+    { label: 'CONTACT', href: '#signal' }
   ];
 
   return (
