@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { AtmosphereLayers } from './components/AtmosphereLayers';
 import { BackgroundStarfield } from './components/BackgroundStarfield';
 import { LoadingScreen } from './components/LoadingScreen';
@@ -47,6 +48,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-void text-paper relative selection:bg-primary/30 selection:text-paper">
+      <Analytics />
       <AtmosphereLayers />
       <BackgroundStarfield />
       {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
